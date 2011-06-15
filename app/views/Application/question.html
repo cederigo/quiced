@@ -1,0 +1,20 @@
+#{extends 'main.html' /} 
+#{set title:'Thanks' /}
+
+<div>Who is the best Player?</div>
+
+#{form @Application.answer(), id:'participateForm'} 
+  #{field 'qId'}
+    <input type="hidden" id="${field.id}" name="${field.name}" value="${id}" />
+  #{/} 
+  #{select 'selection', value:1, id:'answerSelection'}
+    #{option 1}Roger Ambühl#{/option}
+    #{option 2}Cédric Reginster#{/option}
+    #{option 3}Three beds#{/option}
+  #{/select}
+  
+  <input type="submit" value="Beantworten"/>  
+  
+
+#{/form}
+
