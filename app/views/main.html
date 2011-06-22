@@ -2,8 +2,14 @@
 <html>
     <head>
         <title>#{get 'title' /}</title>
+        #{stylesheet media:'screen', src:'reset.css' /}
+        #{stylesheet media:'screen', src:'main.css'/}
+        #{get 'moreScripts'/}
     </head>
     <body>
-        #{doLayout /}
+      <div id="container-500">
+        #{doLayout /}      
+      </div> 
+    
     </body>
 </html>

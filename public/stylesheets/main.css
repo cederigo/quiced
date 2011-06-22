@@ -1,0 +1,66 @@
+
+html { font-size:100.01%; }
+body {
+  font-size: 75%;
+  color: #222;
+  background: #fff;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+
+#container-500 {
+  width: 520px;
+  padding: 20px;
+  margin: auto;
+}
+
+/*forms*/
+input.text,
+input.title { width: 300px; padding:5px; }
+input.title { font-size:1.5em; }
+
+input[type=text], input[type=password], input[type=url], input[type=email],
+input.text, input.title,
+textarea {
+  background-color:#fff;
+  border:1px solid #bbb;
+  margin:0.5em 0;
+}
+
+/* Success, info, notice and error/alert boxes
+-------------------------------------------------------------- */
+.error {
+  color:#8a1f11;
+}
+
+
+/* from placeholder plugin*/
+
+[placeholder]{
+	cursor:pointer;
+	color:#999;
+	padding:5px;
+	border:1px solid #999;
+	
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+}
+[placeholder]:active,
+[placeholder]:focus{
+	cursor:text;
+	color:#333;
+	border:1px solid #0a0;
+	
+	-moz-box-shadow:0 0 5px #0a0, 0 0 5px rgba(0,0,0,0.25) inset;
+	-webkit-box-shadow:0 0 5px #0a0, 0 0 5px rgba(0,0,0,0.25) inset;
+	box-shadow:0 0 5px #0a0, 0 0 5px rgba(0,0,0,0.25) inset;
+}
+/*
+If the input has placeholder="" AND value="" darken its appearance to show it is pre-populated and not a form hint.
+*/
+[placeholder][value]{
+	scolor:#333;
+}
+  
+
