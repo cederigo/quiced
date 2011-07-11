@@ -6,25 +6,63 @@ body {
   background: #fff;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
-
-
-#container-500 {
+/*fb page*/
+#fb-page {
   width: 520px;
-  padding: 20px;
-  margin: auto;
+  height: 500px;
+  position: absolute;
 }
+
+
+
+/*page no-fan*/
+#fb-page #notfan {
+  width: inherit;
+  height: inherit; 
+  background:#ffffff url('/public/images/bg-notfan.jpg') no-repeat left top;
+}
+
+/*page fan*/
+#fb-page #fan {
+  width: inherit;
+  height: inherit; 
+  background:#ffffff url('/public/images/bg-fan.jpg') no-repeat left top;
+}
+#fan #form {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  margin: 10px;
+  width: 500px;
+  height: 186px;
+}
+#form #userName {
+  position: absolute;
+  left: 75px;
+  top: 20px;
+}
+
+#form #userMail {
+  position: absolute;
+  left: 75px;
+  top: 70px;
+}
+
+
 
 /*forms*/
 input.text,
-input.title { width: 300px; padding:5px; }
+input.title { 
+  width: 344px;
+  padding:5px;
+}
 input.title { font-size:1.5em; }
 
 input[type=text], input[type=password], input[type=url], input[type=email],
 input.text, input.title,
 textarea {
   background-color:#fff;
-  border:1px solid #bbb;
-  margin:0.5em 0;
+  border:1px solid black;
 }
 
 /* Success, info, notice and error/alert boxes
@@ -38,7 +76,7 @@ textarea {
 
 [placeholder]{
 	cursor:pointer;
-	color:#999;
+	color:black;
 	padding:5px;
 	border:1px solid #999;
 	
