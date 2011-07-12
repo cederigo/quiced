@@ -3,25 +3,33 @@
 #{set 'moreScripts'}
   <script type="text/javascript" src="/public/javascripts/jquery-1.5.2.min.js">
   </script>
+  <!--  
   <script type="text/javascript" src="/public/javascripts/jquery.placeholder.js">
   </script>
+  -->
 #{/set}
 
 <div id="fan">
-  #{form @Application.participate(), id:'form', class:'inline'} 
-    #{field 'userName'}   
-      <input class="title ${field.errorClass}" type="text" 
-        id="${field.id}" name="${field.name}" placeholder="Name"/>
+  #{form @Application.participate(), id:'form'} 
+    #{field 'userName'}
+       
+      <input class="${field.errorClass}" type="text" 
+        id="${field.id}" name="${field.name}" 
+        value="${field.flash}"
+        placeholder="Name"/>
     #{/}
-    #{field 'mailAddress'} 
-      <input class="title ${field.errorClass}" type="text" 
-        id="${field.id}" name="${field.name}" placeholder="Email"/>
+    #{field 'mailAddress'}
+     
+      <input class="${field.errorClass}" type="text" 
+        id="${field.id}" name="${field.name}" 
+        value="${field.flash}"
+        placeholder="Email"/>
      
     #{/} 
     
       <img src="/public/images/btn-fan_win.jpg" 
         id="button"
-        onclick="$('form').submit();"
+        onclick="$('#form').submit();"
         />
   #{/form}
 </div>

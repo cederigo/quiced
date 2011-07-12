@@ -68,8 +68,9 @@ public class Application extends Controller {
         
         if (p != null) Logger.debug("mailAddress from db: %s", p.mailAddress);
         
-        validation.equals(p,null).message("Sorry Mail Address already registered");
-        if (validation.hasErrors()) {
+        if (!validation.equals(p,null).ok) {
+          params.flash();  
+          validation.addError("mailAddress", "duplicate");  
           validation.keep();
           fan();
         }

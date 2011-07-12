@@ -15,7 +15,7 @@ body {
 
 
 
-/*page no-fan*/
+/*page notfan*/
 #fb-page #notfan {
   width: inherit;
   height: inherit; 
@@ -53,7 +53,36 @@ body {
   left: 180px;
 }
 
+/*question page*/
+#fb-page #question {
+  width: inherit;
+  height: inherit; 
+  background:#ffffff url('/public/images/bg-question.jpg') no-repeat left top;
+}
 
+#question .button {
+  position: absolute;
+  cursor: pointer;
+  width: 140px;
+  height: 22px;
+  bottom: 20px;
+}
+#question #answer-1 {
+  left: 16px;
+}
+#question #answer-2 {
+  left: 190px;
+}
+#question #answer-3 {
+  left: 362px;
+}
+
+/*final page (answer)*/
+#fb-page #answer {
+  width: inherit;
+  height: inherit; 
+  background:#ffffff url('/public/images/bg-answer.jpg') no-repeat left top;
+}
 
 /*forms*/
 input[type=text], input[type=password], input[type=url], input[type=email],

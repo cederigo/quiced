@@ -1,20 +1,36 @@
 #{extends 'main.html' /} 
 #{set title:'Thanks' /}
+#{set 'moreScripts'}
+  <script type="text/javascript" src="/public/javascripts/jquery-1.5.2.min.js">
+  </script>
+#{/set}
 
-<div>Who is the best Player?</div>
+<script type="text/javascript">
+function answer(selection) {
+	
+	$('#selection').val(selection);
+	$('#form').submit();
+	
+	
+}
+</script>
 
-#{form @Application.answer(), id:'participateForm'} 
-  #{field 'qId'}
-    <input type="hidden" id="${field.id}" name="${field.name}" value="${id}" />
-  #{/} 
-  #{select 'selection', value:1, id:'answerSelection'}
-    #{option 1}Roger Ambühl#{/option}
-    #{option 2}Cédric Reginster#{/option}
-    #{option 3}Three beds#{/option}
-  #{/select}
+<div id="question">
+  <div class="button" id="answer-1" onclick="answer(1);"></div>
+  <div class="button" id="answer-2" onclick="answer(2);"></div>
+  <div class="button" id="answer-3" onclick="answer(3);"></div>
   
-  <input type="submit" value="Beantworten"/>  
+  #{form @Application.answer(), id:'form'} 
+    #{field 'qId'}   
+      <input type="hidden" id="${field.id}" name="${field.name}" value="${id}"/>
+    #{/}
+    
+    #{field 'selection'}
+      <!-- value will be set by javascript --> 
+      <input type="hidden" id="${field.id}" name="${field.name}" value=""/>
+    #{/} 
+  #{/form}
   
+</div>
 
-#{/form}
 
