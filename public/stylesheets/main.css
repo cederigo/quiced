@@ -41,36 +41,33 @@ body {
   left: 75px;
   top: 20px;
 }
-
-#form #userMail {
+#form #mailAddress {
   position: absolute;
   left: 75px;
-  top: 70px;
+  top: 80px;
+}
+#form #button {
+  cursor: pointer;
+  position: absolute;
+  bottom: 6px;
+  left: 180px;
 }
 
 
 
 /*forms*/
-input.text,
-input.title { 
-  width: 344px;
-  padding:5px;
-}
-input.title { font-size:1.5em; }
-
 input[type=text], input[type=password], input[type=url], input[type=email],
 input.text, input.title,
 textarea {
+  width: 344px;
+  padding:5px;
+  font-size:2.3em;
   background-color:#fff;
   border:1px solid black;
 }
-
-/* Success, info, notice and error/alert boxes
--------------------------------------------------------------- */
-.error {
-  color:#8a1f11;
+input.hasError {
+  border:2px solid red;
 }
-
 
 /* from placeholder plugin*/
 

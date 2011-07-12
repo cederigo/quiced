@@ -1,6 +1,6 @@
 #{extends 'main.html' /} 
 #{set title:'Participate' /}
-#{set moreScripts}
+#{set 'moreScripts'}
   <script type="text/javascript" src="/public/javascripts/jquery-1.5.2.min.js">
   </script>
   <script type="text/javascript" src="/public/javascripts/jquery.placeholder.js">
@@ -12,29 +12,17 @@
     #{field 'userName'}   
       <input class="title ${field.errorClass}" type="text" 
         id="${field.id}" name="${field.name}" placeholder="Name"/>
-      
-      #{ifErrors}
-        #{errors}
-          <span class="error">${error}</span>
-        #{/errors}
-      #{/ifErrors}
-     
-      <!-- 
-      <div>
-        <input type="submit" value="Teilnehmen">   
-      </div>
-       -->
     #{/}
     #{field 'mailAddress'} 
       <input class="title ${field.errorClass}" type="text" 
         id="${field.id}" name="${field.name}" placeholder="Email"/>
      
-      <!-- 
-      <div>
-        <input type="submit" value="Teilnehmen">   
-      </div>
-       -->
     #{/} 
+    
+      <img src="/public/images/btn-fan_win.jpg" 
+        id="button"
+        onclick="$('form').submit();"
+        />
   #{/form}
 </div>
 

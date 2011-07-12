@@ -55,7 +55,8 @@ public class Application extends Controller {
         }
     }
 
-    public static void participate(@Required @Email String mailAddress) {
+    public static void participate(@Required @Email String mailAddress, 
+            @Required String userName) {
         if (validation.hasErrors()) {
             params.flash();
             validation.keep();

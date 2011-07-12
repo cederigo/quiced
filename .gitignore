@@ -7,3 +7,4 @@ modules/
 precompiled/
 tmp/
 test/
+war/WEB-INF/appengine-generated/
