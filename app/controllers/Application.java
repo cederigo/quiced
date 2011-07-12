@@ -16,6 +16,7 @@ import com.google.appengine.repackaged.org.json.JSONException;
 import com.google.appengine.repackaged.org.json.JSONObject;
 import com.google.gson.JsonObject;
 
+import models.Participant;
 import net.sf.oval.constraint.NotEmpty;
 
 public class Application extends Controller {
@@ -28,8 +29,7 @@ public class Application extends Controller {
         }
 
         String[] tmp = signed_request.split("\\.");
-        /* ignored for now */
-        String sig = tmp[0];
+        String sig = tmp[0];/* ignored for now */
         String payload = "";
         try {
             payload = new String(Base64.decodeBase64(tmp[1]), "utf-8");
@@ -55,12 +55,27 @@ public class Application extends Controller {
         }
     }
 
-    public static void participate(@Required @Email String userMail) {
+    public static void participate(@Required @Email String mailAddress) {
         if (validation.hasErrors()) {
             params.flash();
             validation.keep();
             fan();
         }
+        
+        /*store mailAddress*/
+        Participant p = Participant.all().filter("mailAddress", mailAddress).get();
+        
+        if (p != null) Logger.debug("mailAddress from db: %s", p.mailAddress);
+        
+        validation.equals(p,null).message("Sorry Mail Address already registered");
+        if (validation.hasErrors()) {
+          validation.keep();
+          fan();
+        }
+        
+        p = new Participant();
+        p.mailAddress = mailAddress;
+        p.insert();
 
         /* save mail address, get active question */
         question(1);
