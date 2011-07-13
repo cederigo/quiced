@@ -21,10 +21,6 @@ function answer(selection) {
   <div class="button" id="answer-3" onclick="answer(3);"></div>
   
   #{form @Application.answer(), id:'form'} 
-    #{field 'qId'}   
-      <input type="hidden" id="${field.id}" name="${field.name}" value="${id}"/>
-    #{/}
-    
     #{field 'selection'}
       <!-- value will be set by javascript --> 
       <input type="hidden" id="${field.id}" name="${field.name}" value=""/>

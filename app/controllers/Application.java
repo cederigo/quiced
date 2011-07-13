@@ -66,8 +66,6 @@ public class Application extends Controller {
         /*store mailAddress*/
         Participant p = Participant.all().filter("mailAddress", mailAddress).get();
         
-        if (p != null) Logger.debug("mailAddress from db: %s", p.mailAddress);
-        
         if (!validation.equals(p,null).ok) {
           params.flash();  
           validation.addError("mailAddress", "duplicate");  
@@ -77,10 +75,13 @@ public class Application extends Controller {
         
         p = new Participant();
         p.mailAddress = mailAddress;
+        p.name = userName;
         p.insert();
+        
+        /*keep mail address in session*/
+        session.put("id", p.id);
 
-        /* save mail address, get active question */
-        question(1);
+        question();
 
     }
 
@@ -92,14 +93,29 @@ public class Application extends Controller {
         render();
     }
 
-    public static void question(int id) {
-        render(id);
+    public static void question() {
+        render();
     }
 
-    public static void answer(int qId, int selection) {
+    public static void answer(int selection) {
         
-        Logger.debug("question: " + qId + " answered with selection: " + selection);
+        String userId = session.get("id");
+        if (userId == null) {
+            error("not registered");
+        } 
         
+        Participant p = new Participant();
+        p.id = Long.parseLong(userId);
+        p.get();
+        if (p.mailAddress == null) {
+            error("not registered");
+        }
+        
+        p.answer = selection;
+        p.update();
+        session.clear();
+        
+        Logger.debug( p.name + " answered with selection: " + selection);
         render();
     }
 

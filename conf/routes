@@ -3,10 +3,10 @@
 # ~~~~
 
 # Home page
-GET		/										Application.dispatch					
+*		/										Application.dispatch					
 GET 	/fan									Application.fan
 GET		/notfan									Application.notfan
-GET		/participate							Application.participate
+POST	/participate							Application.participate
 GET		/question								Application.question
 POST	/thanks									Application.answer			
 
