@@ -1,3 +1,17 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
+
+#FB 'feed' dialog
+feed_link=http://someurl.com
+feed_picture=http://someurl.com/picture.jpg
+feed_name=Name Rasenschach.ch
+feed_caption=Caption Rasenschach.ch
+
+#%s is replaced with chosen answer
+feed_description=Antwortet auf die Frage Welcher Fussballfan bist du? "%s"
+
+
+answer_1=Der wahre Stadion Fan
+answer_2=Der Bier- und Couch-Fan
+answer_3=Der englische Pub-Fan

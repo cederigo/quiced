@@ -4,6 +4,7 @@ import play.*;
 import play.data.validation.Email;
 import play.data.validation.Required;
 import play.data.validation.Valid;
+import play.i18n.Messages;
 import play.mvc.*;
 
 import java.io.UnsupportedEncodingException;
@@ -96,6 +97,14 @@ public class Application extends Controller {
     public static void question() {
         render();
     }
+    
+    public static void test(int aId) {
+        
+        String answerText = Messages.get("answer_" + aId);
+        String feed_description = Messages.get("feed_description", answerText);
+        
+        render("Application/answer.html",feed_description);
+    }
 
     public static void answer(int selection) {
         
@@ -116,7 +125,12 @@ public class Application extends Controller {
         session.clear();
         
         Logger.debug( p.name + " answered with selection: " + selection);
-        render();
+        
+        //lookup correct answerText (used in FB 'feed' dialog)
+        String answerText = Messages.get("answer_" + selection);
+        String feed_description = Messages.get("feed_description", answerText);
+        
+        render(feed_description);
     }
 
 }

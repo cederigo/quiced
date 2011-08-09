@@ -9,6 +9,7 @@ GET		/notfan									Application.notfan
 POST	/participate							Application.participate
 GET		/question								Application.question
 POST	/thanks									Application.answer			
+GET		/test									Application.test
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

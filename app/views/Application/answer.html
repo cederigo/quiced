@@ -1,6 +1,36 @@
 #{extends 'main.html' /}
 #{set title:'Thanks' /}
+#{set 'moreScripts'}
+  <script src="http://connect.facebook.net/en_US/all.js"></script>
+#{/set}
+
+<div id="fb-root"></div>
+<script>
+   FB.init({ 
+      appId:'233236036693507',  
+      oauth:true
+	});
+
+    function share() {
+       
+        //    picture: "&{'feed_picture'}",
+        FB.ui({ method: 'feed',
+            link: "&{'feed_link'}",
+            name: "&{'feed_name'}",
+            caption: "&{'feed_caption'}",
+            description: "${feed_description}"
+     	});
+    }
+    
+    function inviteFriends() {
+       alert("inviteFriends");
+    }
+    
+    share();
+</script>
 
 <div id="answer">
+  <div class="button" id="btn_share"  onclick="share();"></div>
+  <div class="button" id="btn_invite" onclick="inviteFriends();"></div>
 </div>
 

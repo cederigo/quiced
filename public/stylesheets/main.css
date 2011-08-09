@@ -84,6 +84,23 @@ body {
   background:#ffffff url('/public/images/bg-answer.jpg') no-repeat left top;
 }
 
+#answer .button {
+  position: absolute;
+  cursor: pointer;
+  width: 140px;
+  height: 22px;
+  bottom: 20px;
+}
+
+#answer #btn_share {
+  left: 92px;
+}
+
+#answer #btn_invite {
+  left: 282px;
+}
+
+
 /*forms*/
 input[type=text], input[type=password], input[type=url], input[type=email],
 input.text, input.title,
