@@ -8,3 +8,4 @@ precompiled/
 tmp/
 test/
 war/WEB-INF/appengine-generated/
+.DS_Store
