@@ -13,17 +13,20 @@
 
     function share() {
        
-        //    picture: "&{'feed_picture'}",
         FB.ui({ method: 'feed',
             link: "&{'feed_link'}",
-            name: "&{'feed_name'}",
+            picture: "@@{'/public/images/'}/${feed_picture}",
+            name: "${feed_name}",
             caption: "&{'feed_caption'}",
-            description: "${feed_description}"
+            description: "&{'feed_description'}"
      	});
     }
     
     function inviteFriends() {
-       alert("inviteFriends");
+    	FB.ui({ method: 'apprequests',
+    	    title: "&{'apprequests_title'}",
+    	    message: "&{'apprequests_message'}"
+    	});
     }
     
     share();

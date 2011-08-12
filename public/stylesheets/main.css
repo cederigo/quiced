@@ -21,6 +21,14 @@ body {
   height: inherit; 
   background:#ffffff url('/public/images/bg-notfan.jpg') no-repeat left top;
 }
+#notfan #btn_win {
+  position: absolute;
+  cursor: pointer;
+  width: 140px;
+  height: 22px;
+  bottom: 20px;
+  left: 189px;
+}
 
 /*page fan*/
 #fb-page #fan {
@@ -64,7 +72,7 @@ body {
   position: absolute;
   cursor: pointer;
   width: 140px;
-  height: 22px;
+  height: 150px;
   bottom: 20px;
 }
 #question #answer-1 {

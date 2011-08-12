@@ -1,5 +1,25 @@
 #{extends 'main.html' /}
 #{set title:'Become a fan' /}
+#{set 'moreScripts'}
+<link href="/public/stylesheets/custom-theme/jquery-ui-1.8.15.custom.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="/public/javascripts/jquery-1.6.2.min.js"></script>
+  <script type="text/javascript" src="/public/javascripts/jquery-ui-1.8.15.custom.min.js"></script>
+#{/set}
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	    
+	});
+</script>
 
 <div id="notfan">
+    <div id="btn_win" onclick="$('#dialog_win').dialog({position:'top', modal:'true'})"></div>
+</div>
+<a href="" onclick="$('#dialog_agb').dialog({height: '500', width:'450',position: 'top', modal:'true'}); return false;">Teilnahmebedingungen</a>
+
+<div id="dialog_agb" style="display:none">
+&{'dialog_agb'}
+</div>
+<div id="dialog_win" style="display:none">
+&{'dialog_win'}
 </div>

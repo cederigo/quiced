@@ -6,6 +6,7 @@ import play.data.validation.Required;
 import play.data.validation.Valid;
 import play.i18n.Messages;
 import play.mvc.*;
+import play.mvc.Router.Route;
 
 import java.io.UnsupportedEncodingException;
 import java.util.*;
@@ -34,10 +35,12 @@ public class Application extends Controller {
         String payload = "";
         try {
             payload = new String(Base64.decodeBase64(tmp[1]), "utf-8");
+            Logger.debug("payload: %s", payload);
             JSONObject data = new JSONObject(payload);
             JSONObject page = data.getJSONObject("page");
             if (page == null) {
-                error("app only usable within a fb page");
+                Logger.error("app only usable within a fb page");
+                notfan();
                 return;
             }
 
@@ -50,10 +53,12 @@ public class Application extends Controller {
             }
 
         } catch (UnsupportedEncodingException e) {
-            error("faied to parse signed_request");
+            Logger.error("faied to parse signed_request");
         } catch (JSONException e) {
-            error(e);
+            Logger.error(e.getMessage());
         }
+        //default
+        fan();
     }
 
     public static void participate(@Required @Email String mailAddress, 
@@ -100,10 +105,10 @@ public class Application extends Controller {
     
     public static void test(int aId) {
         
-        String answerText = Messages.get("answer_" + aId);
-        String feed_description = Messages.get("feed_description", answerText);
+        String feed_name = Messages.get("answer_" + aId);
+        String feed_picture = Messages.get("feed_picture", aId);
         
-        render("Application/answer.html",feed_description);
+        render("Application/answer.html",feed_name,feed_picture);
     }
 
     public static void answer(int selection) {
@@ -127,10 +132,11 @@ public class Application extends Controller {
         Logger.debug( p.name + " answered with selection: " + selection);
         
         //lookup correct answerText (used in FB 'feed' dialog)
-        String answerText = Messages.get("answer_" + selection);
-        String feed_description = Messages.get("feed_description", answerText);
+        String feed_name = Messages.get("answer_" + selection);
+        String feed_picture = Messages.get("feed_picture", selection);
         
-        render(feed_description);
+        
+        render(feed_name,feed_picture);
     }
 
 }

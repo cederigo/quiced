@@ -3,15 +3,47 @@
 #
 
 #FB 'feed' dialog
-feed_link=http://someurl.com
-feed_picture=http://someurl.com/picture.jpg
-feed_name=Name Rasenschach.ch
-feed_caption=Caption Rasenschach.ch
+feed_link=http://www.facebook.com/rasenschach?sk=wettbewerb
+feed_picture=teilen_bild_%s_75x75.jpg
+feed_name=%s
+feed_caption=www.rasenschach.ch
 
-#%s is replaced with chosen answer
-feed_description=Antwortet auf die Frage Welcher Fussballfan bist du? "%s"
+feed_description=Was für ein Fan bist du? Mach mit beim Rasenschach-Wettbewerb!
+
+answer_1=Ich bin der wahre Stadion Fan!
+answer_2=Ich bin der Bier- und Couch-Fan!
+answer_3=Ich bin der englische Pub-Fan!
 
 
-answer_1=Der wahre Stadion Fan
-answer_2=Der Bier- und Couch-Fan
-answer_3=Der englische Pub-Fan
+#FB 'apprequests' dialog
+
+apprequests_title=Freunde einladen
+apprequests_message=Mach mit beim Rasenschach-Wettbewerb und sag uns, was für ein Fan du bist!
+apprequests_filters=
+
+dialog_win=Drücke "Gefällt mir" und nimm am Wettbewerb teil! 
+
+dialog_agb=Teilnahmebedingungen Rasenschach-Wettbewerb<br/><br/>\
+Die Teilnahme an der Promotion erfolgt über die Anwendung Rasenschach-Wettbewerb auf der \
+Facebook-Plattform. Die Anwendung ist auch auf dem Reiter Wettbewerb auf der Facebook-Seite \
+Rasenschach.ch verfügbar. Zur Teilnahme an der Verlosung muss nur das Teilnahme-Formular \
+ausgefüllt werden. Die Weiterverbreitung der Inhalte mittels Facebook-Funktionen ist nicht \
+Bedingung für eine Teilnahme.<br/><br/>\
+Der Wettbewerb endet am 31. Oktober 2011. Teilnahmeberechtigt sind in der Schweiz wohnhafte \
+Personen. Mitarbeiter von Rasenschach.ch, der Agentur 6 Grad sind von der Wettbewerbsteilnahme \
+ausgeschlossen. Der Hauptgewinn ist ein 100.- CHF Shopgutschein, welcher mittels Gutscheincode \
+für den Shop ausgeliefert wird. Über den Wettbewerb wird keine Korrespondenz geführt. Der \
+Gewinn kann nicht bar ausbezahlt oder umgetauscht werden. Der Rechtsweg ist ausgeschlossen.<br/><br/> \
+Rasenschach.ch behält sich das Recht vor, bei Verstoss gegebenenfalls rechtliche Schritte einzuleiten. \
+Die Haftung von Rasenschach.ch für den Ausfall oder die Absage des Preises ist ausgeschlossen. Der \
+Gewinner wird per E-Mail benachrichtigt. Sind Gewinner innerhalb von 20 Tagen nicht über die bei \
+der Registrierung angegebene Mailadresse erreichbar, so erlischt der Gewinnanspruch und der Preis \
+wird neu verlost.<br/><br/>\
+Diese Promotion steht in keiner Verbindung zu Facebook und wird in keiner Weise von Facebook \
+gesponsert, unterstützt oder organisiert. Der Empfänger der von dir bereitgestellten Informationen \
+ist nicht Facebook, sondern Rasenschach.ch. Die bereitgestellten Informationen werden einzig für die \
+Durchführung dieses Wettbewerbs verwendet.<br/><br/> \
+Facebook wird von allen Schäden, Verlusten und Aufwendungen jeder Art, welche aus Ansprüchen in \
+Bezug auf die Promotion resultieren, freigestellt und schadlos gehalten.<br/><br/> \
+Sämtliche Fragen, Kommentare oder Beschwerden richten Sie bitte an Rasenschach.ch \
+(info@rasenschach.ch) und nicht an Facebook. \
